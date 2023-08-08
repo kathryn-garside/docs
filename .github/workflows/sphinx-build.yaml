@@ -2,11 +2,7 @@ name: docs
 
 on:
   push:
-    branches: [ main, dev ]
-    tags: [ 'v*' ]
-
-  pull_request:
-    branches: [ main, dev ]
+    branches: main
 
 jobs:
   run:
@@ -31,7 +27,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          branch: dev
+          branch: gh-pages
           folder: sphinx/_build/html
           target-folder: docs
           clean: true
